@@ -1,0 +1,47 @@
+@model IEnumerable<FirstWebMVC.Models.Sinhvien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nguoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hoten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diachi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nguoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diachi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.nguoi">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.nguoi">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.nguoi">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> 

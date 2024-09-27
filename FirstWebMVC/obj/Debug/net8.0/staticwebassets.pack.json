@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\FirstWebMVC.bundle.scp.css"
     },
     {
+      "Id": "D:\\Net_Core_API\\FirstWebMVC\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "D:\\Net_Core_API\\FirstWebMVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -1,8 +1,8 @@
-@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome to Việt Nam</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Nhập dữ liệu sinh viên:@ViewBag.message</h1>
+<form asp-action="Index">
+        <label for="">Nhập họ tên</label>
+        <input type="text" name="name" placeholder="Họ và tên"><br>
+        <label for="">Nhập địa chỉ</label>
+        <input type="text" name="address" placeholder="Địa chỉ của bạn"><br>
+        <input type="submit" name="" value="Gửi">
+</form>

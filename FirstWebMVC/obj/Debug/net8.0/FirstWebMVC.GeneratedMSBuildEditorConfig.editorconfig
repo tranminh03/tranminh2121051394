@@ -26,30 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Net_Core_API\FirstWebMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Net_Core_API/FirstWebMVC/Views/Account/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Net_Core_API/FirstWebMVC/Views/Customer/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Net_Core_API/FirstWebMVC/Views/Customer/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Net_Core_API/FirstWebMVC/Views/Customer/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Net_Core_API/FirstWebMVC/Views/Customer/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Net_Core_API/FirstWebMVC/Views/Customer/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/Net_Core_API/FirstWebMVC/Views/Employee/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -110,36 +86,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Net_Core_API/FirstWebMVC/Views/Sinhvien/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaHZpZW5cQ3JlYXRlLmNzaHRtbA==
+[D:/Net_Core_API/FirstWebMVC/Views/Student/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Net_Core_API/FirstWebMVC/Views/Sinhvien/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaHZpZW5cRGVsZXRlLmNzaHRtbA==
+[D:/Net_Core_API/FirstWebMVC/Views/Student/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Net_Core_API/FirstWebMVC/Views/Sinhvien/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaHZpZW5cRGV0YWlscy5jc2h0bWw=
+[D:/Net_Core_API/FirstWebMVC/Views/Student/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Net_Core_API/FirstWebMVC/Views/Sinhvien/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaHZpZW5cRWRpdC5jc2h0bWw=
+[D:/Net_Core_API/FirstWebMVC/Views/Student/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Net_Core_API/FirstWebMVC/Views/Sinhvien/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2luaHZpZW5cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Net_Core_API/FirstWebMVC/Views/Student/Demo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxEZW1vLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Net_Core_API/FirstWebMVC/Views/Student/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxpbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Net_Core_API/FirstWebMVC/Views/TranVanMinh/index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhblZhbk1pbmhcaW5kZXguY3NodG1s
+[D:/Net_Core_API/FirstWebMVC/Views/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Net_Core_API/FirstWebMVC/Views/_ViewImports.cshtml]

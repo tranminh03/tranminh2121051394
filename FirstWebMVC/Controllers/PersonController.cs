@@ -26,7 +26,7 @@ namespace FirstWebMVC.Controllers
         }
 
         // GET: Person/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -34,7 +34,7 @@ namespace FirstWebMVC.Controllers
             }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (person == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace FirstWebMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonID,HoTen,QueQuan")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace FirstWebMVC.Controllers
         }
 
         // GET: Person/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -86,9 +86,9 @@ namespace FirstWebMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonID,HoTen,QueQuan")] Person person)
         {
-            if (id != person.PersonId)
+            if (id != person.PersonID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace FirstWebMVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.PersonId))
+                    if (!PersonExists(person.PersonID))
                     {
                         return NotFound();
                     }
@@ -117,7 +117,7 @@ namespace FirstWebMVC.Controllers
         }
 
         // GET: Person/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -125,7 +125,7 @@ namespace FirstWebMVC.Controllers
             }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (person == null)
             {
                 return NotFound();
@@ -137,7 +137,7 @@ namespace FirstWebMVC.Controllers
         // POST: Person/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var person = await _context.Person.FindAsync(id);
             if (person != null)
@@ -149,9 +149,9 @@ namespace FirstWebMVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonExists(int id)
+        private bool PersonExists(string id)
         {
-            return _context.Person.Any(e => e.PersonId == id);
+            return _context.Person.Any(e => e.PersonID == id);
         }
     }
 }

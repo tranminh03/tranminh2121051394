@@ -1,16 +1,11 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FirstWebMVC.Models;
-
-    // đặt tên cho bảng
-    [Table("SinhVien")]
+namespace FirstWebMVC.Models
+{
     public class Student
     {
-    
         [Key]
-        public string ?name{get;set;}
-        public string? Address{get;set;}
+        public string? StudentID { get; set; }
+        public string? FullName { get; set; }
     }
-
-
+}

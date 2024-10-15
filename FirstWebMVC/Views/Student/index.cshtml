@@ -1,8 +1,40 @@
-<h1>Nhập dữ liệu sinh viên:@ViewBag.message</h1>
-<form asp-action="Index">
-        <label for="">Nhập họ tên</label>
-        <input type="text" name="name" placeholder="Họ và tên"><br>
-        <label for="">Nhập địa chỉ</label>
-        <input type="text" name="address" placeholder="Địa chỉ của bạn"><br>
-        <input type="submit" name="" value="Gửi">
-</form>
+@model IEnumerable<FirstWebMVC.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentID)
+            </th>
+            <th> 
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.StudentID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -34,7 +34,7 @@ namespace FirstWebMVC.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeId == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace FirstWebMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,Age")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmployeeID,Company,PersonID,HoTen,QueQuan")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace FirstWebMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,Age")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("EmployeeID,Company,PersonID,HoTen,QueQuan")] Employee employee)
         {
-            if (id != employee.EmployeeId)
+            if (id != employee.PersonID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace FirstWebMVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.EmployeeId))
+                    if (!EmployeeExists(employee.PersonID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace FirstWebMVC.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeId == id);
+                .FirstOrDefaultAsync(m => m.PersonID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -151,7 +151,7 @@ namespace FirstWebMVC.Controllers
 
         private bool EmployeeExists(string id)
         {
-            return _context.Employee.Any(e => e.EmployeeId == id);
+            return _context.Employee.Any(e => e.PersonID == id);
         }
     }
 }

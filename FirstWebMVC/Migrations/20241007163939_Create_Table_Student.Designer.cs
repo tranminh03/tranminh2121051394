@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FirstWebMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240927074559_Create_table_Person")]
-    partial class Create_table_Person
+    [Migration("20241007163939_Create_Table_Student")]
+    partial class Create_Table_Student
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,22 +19,19 @@ namespace FirstWebMVC.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
 
-            modelBuilder.Entity("FirstWebMVC.Models.Person", b =>
-                {
-                    b.Property<string>("PersonID")
-                        .HasColumnType("TEXT");
+           
 
-                    b.Property<string>("Address")
-                        .IsRequired()
+            modelBuilder.Entity("FirstWebMVC.Models.Student", b =>
+                {
+                    b.Property<string>("StudentID")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("PersonID");
+                    b.HasKey("StudentID");
 
-                    b.ToTable("Persons");
+                    b.ToTable("Student");
                 });
 #pragma warning restore 612, 618
         }

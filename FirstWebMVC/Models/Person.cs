@@ -9,8 +9,7 @@ namespace FirstWebMVC.Models
     {
        [Key]
        public string? PersonID { get; set; }
-       public string? HoTen { get; set; }
-       public string? QueQuan { get; set; }
-
+       public required string HoTen { get; set; }
+       public required string QueQuan { get; set; }  
     }
 }

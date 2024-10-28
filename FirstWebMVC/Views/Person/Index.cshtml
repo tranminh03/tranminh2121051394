@@ -6,6 +6,11 @@
 
 <h1>Index</h1>
 
+<form asp-action="Index" method="post">
+    <input type="text" name="searchString" placeholder="Nhập tên cần tìm" value="@ViewData["CurrentFilter"]" />
+    <input type="submit" value="Tìm Kiếm" />
+</form>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>

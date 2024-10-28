@@ -25,6 +25,28 @@ namespace FirstWebMVC.Controllers
             return View(await _context.Person.ToListAsync());
         }
 
+
+   //Search
+   
+        [HttpPost]
+        public async Task<IActionResult> Index(string searchString)
+        {
+            if (_context.Person == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Person'  is null.");
+            }
+            var person = from m in _context.Person select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                // person = person.Where(s => s.HoTen != null && 
+                //            s.HoTen.ToUpper().Contains(searchString.ToUpper()));
+                person = person.Where(s => s.HoTen != null &&
+                                   EF.Functions.Like(s.HoTen, $"%{searchString.Trim()}%"));
+            }
+            return View(await person.ToListAsync());
+        }
+        
+
         // GET: Person/Details/5
         public async Task<IActionResult> Details(string id)
         {

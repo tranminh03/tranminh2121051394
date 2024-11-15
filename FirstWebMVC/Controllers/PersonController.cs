@@ -184,7 +184,7 @@ namespace FirstWebMVC.Controllers
 
 
 //Upload
-        public async Task<IActionResult> Upload()
+        public async Task<IActionResult> Upload ()
         {
             return View();
         }
@@ -195,7 +195,7 @@ namespace FirstWebMVC.Controllers
         public async Task<IActionResult> Upload(IFormFile file)
 
         {
-            if (file != null)
+            if (file!=null)
             {
                 string fileExtension = Path.GetExtension(file.FileName);
 

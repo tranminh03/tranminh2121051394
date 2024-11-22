@@ -9,20 +9,29 @@ using FirstWebMVC.Data;
 using FirstWebMVC.Models;
 using FirstWebMVC.Models.Process;
 using OfficeOpenXml;
+using X.PagedList;
+using X.PagedList.Extensions;
+
 
 namespace FirstWebMVC.Controllers
 {
     public class PersonController : Controller
     {
         private readonly ApplicationDbContext _context;
-        
+        // excel
         private ExcelProcess _excelProcess = new ExcelProcess();
 
         public PersonController(ApplicationDbContext context)
         {
             _context = context;
         }
-        
+        //Phân Trang 
+         [HttpGet]
+        public async Task<IActionResult> Index(int? page)
+        {
+            var model = _context.Person.ToList().ToPagedList(page ?? 1, 5);
+            return View(model);
+        }
 
         // GET: Person
         public async Task<IActionResult> Index()

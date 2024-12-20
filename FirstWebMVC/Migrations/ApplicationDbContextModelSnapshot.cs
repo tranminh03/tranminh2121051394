@@ -37,7 +37,6 @@ namespace FirstWebMVC.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("LockoutEnabled")
@@ -82,7 +81,22 @@ namespace FirstWebMVC.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.Entities.Department", b =>
+                {
+                    b.Property<int>("DepartmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("DepartmentId");
+
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("FirstWebMVC.Models.Person", b =>
@@ -119,10 +133,15 @@ namespace FirstWebMVC.Migrations
                     b.Property<string>("StudentID")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("FullName")
                         .HasColumnType("TEXT");
 
                     b.HasKey("StudentID");
+
+                    b.HasIndex("DepartmentId");
 
                     b.ToTable("Student");
                 });
@@ -150,7 +169,7 @@ namespace FirstWebMVC.Migrations
                         .IsUnique()
                         .HasDatabaseName("RoleNameIndex");
 
-                    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("Roles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -173,7 +192,7 @@ namespace FirstWebMVC.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims", (string)null);
+                    b.ToTable("RoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -196,7 +215,7 @@ namespace FirstWebMVC.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims", (string)null);
+                    b.ToTable("UserClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
@@ -220,7 +239,7 @@ namespace FirstWebMVC.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins", (string)null);
+                    b.ToTable("UserLogins", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -235,7 +254,7 @@ namespace FirstWebMVC.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles", (string)null);
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -256,7 +275,7 @@ namespace FirstWebMVC.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens", (string)null);
+                    b.ToTable("UserTokens", (string)null);
                 });
 
             modelBuilder.Entity("FirstWebMVC.Models.Employee", b =>
@@ -271,6 +290,17 @@ namespace FirstWebMVC.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasDiscriminator().HasValue("Employee");
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.Student", b =>
+                {
+                    b.HasOne("FirstWebMVC.Models.Entities.Department", "Department")
+                        .WithMany("Student")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -322,6 +352,11 @@ namespace FirstWebMVC.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FirstWebMVC.Models.Entities.Department", b =>
+                {
+                    b.Navigation("Student");
                 });
 #pragma warning restore 612, 618
         }

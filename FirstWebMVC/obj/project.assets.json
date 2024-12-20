@@ -59,7 +59,7 @@
           }
         }
       },
-      "BouncyCastle.Cryptography/2.4.0": {
+      "BouncyCastle.Cryptography/2.5.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/BouncyCastle.Cryptography.dll": {
@@ -709,10 +709,10 @@
           }
         }
       },
-      "MailKit/4.8.0": {
+      "MailKit/4.9.0": {
         "type": "package",
         "dependencies": {
-          "MimeKit": "4.8.0",
+          "MimeKit": "4.9.0",
           "System.Formats.Asn1": "8.0.1"
         },
         "compile": {
@@ -837,11 +837,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Identity.UI/8.0.8": {
+      "Microsoft.AspNetCore.Identity.UI/8.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.FileProviders.Embedded": "8.0.8",
-          "Microsoft.Extensions.Identity.Stores": "8.0.8"
+          "Microsoft.Extensions.FileProviders.Embedded": "8.0.0",
+          "Microsoft.Extensions.Identity.Stores": "8.0.0"
         },
         "compile": {
           "lib/net8.0/Microsoft.AspNetCore.Identity.UI.dll": {
@@ -1853,7 +1853,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.FileProviders.Embedded/8.0.8": {
+      "Microsoft.Extensions.FileProviders.Embedded/8.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0"
@@ -2370,12 +2370,12 @@
           }
         }
       },
-      "MimeKit/4.8.0": {
+      "MimeKit/4.9.0": {
         "type": "package",
         "dependencies": {
-          "BouncyCastle.Cryptography": "2.4.0",
+          "BouncyCastle.Cryptography": "2.5.0",
           "System.Formats.Asn1": "8.0.1",
-          "System.Security.Cryptography.Pkcs": "8.0.0"
+          "System.Security.Cryptography.Pkcs": "8.0.1"
         },
         "compile": {
           "lib/net8.0/MimeKit.dll": {
@@ -3149,11 +3149,8 @@
           }
         }
       },
-      "System.Security.Cryptography.Pkcs/8.0.0": {
+      "System.Security.Cryptography.Pkcs/8.0.1": {
         "type": "package",
-        "dependencies": {
-          "System.Formats.Asn1": "8.0.0"
-        },
         "compile": {
           "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
             "related": ".xml"
@@ -3491,16 +3488,16 @@
         "lib/netstandard2.0/Bogus.xml"
       ]
     },
-    "BouncyCastle.Cryptography/2.4.0": {
-      "sha512": "SwXsAV3sMvAU/Nn31pbjhWurYSjJ+/giI/0n6tCrYoupEK34iIHCuk3STAd9fx8yudM85KkLSVdn951vTng/vQ==",
+    "BouncyCastle.Cryptography/2.5.0": {
+      "sha512": "rc7vRCq/KD3GtIwSgRtjanGaBwTb9nLenFDZnEcauWlssuuEoxcbMfWA3QWWho6QDMSOSkWjs657McdHzEtEcw==",
       "type": "package",
-      "path": "bouncycastle.cryptography/2.4.0",
+      "path": "bouncycastle.cryptography/2.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "README.md",
-        "bouncycastle.cryptography.2.4.0.nupkg.sha512",
+        "bouncycastle.cryptography.2.5.0.nupkg.sha512",
         "bouncycastle.cryptography.nuspec",
         "lib/net461/BouncyCastle.Cryptography.dll",
         "lib/net461/BouncyCastle.Cryptography.xml",
@@ -4326,10 +4323,10 @@
         "logo.png"
       ]
     },
-    "MailKit/4.8.0": {
-      "sha512": "zZ1UoM4FUnSFUJ9fTl5CEEaejR0DNP6+FDt1OfXnjg4igZntcir1tg/8Ufd6WY5vrpmvToAjluYqjVM24A+5lA==",
+    "MailKit/4.9.0": {
+      "sha512": "wRUVzYXRWbjdUixwtSp7ivVHPhWw17h+BvwIVaouBike68B56Xk9b5+QRT39EK/QN8XF7MtOgt9caHvUaCvhIQ==",
       "type": "package",
-      "path": "mailkit/4.8.0",
+      "path": "mailkit/4.9.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4350,10 +4347,6 @@
         "lib/net48/MailKit.dll.config",
         "lib/net48/MailKit.pdb",
         "lib/net48/MailKit.xml",
-        "lib/net6.0/MailKit.dll",
-        "lib/net6.0/MailKit.dll.config",
-        "lib/net6.0/MailKit.pdb",
-        "lib/net6.0/MailKit.xml",
         "lib/net8.0/MailKit.dll",
         "lib/net8.0/MailKit.dll.config",
         "lib/net8.0/MailKit.pdb",
@@ -4366,7 +4359,7 @@
         "lib/netstandard2.1/MailKit.dll.config",
         "lib/netstandard2.1/MailKit.pdb",
         "lib/netstandard2.1/MailKit.xml",
-        "mailkit.4.8.0.nupkg.sha512",
+        "mailkit.4.9.0.nupkg.sha512",
         "mailkit.nuspec"
       ]
     },
@@ -4472,10 +4465,10 @@
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Identity.UI/8.0.8": {
-      "sha512": "tvweO7FJ+4nPTYK/CXMyPtmT/0GVAOsoEKbzaXffI0NVKUS1lujWX9fTtEji+U+S7zjmtZSdqdQ+CqCN45cuBA==",
+    "Microsoft.AspNetCore.Identity.UI/8.0.0": {
+      "sha512": "pDr/LtMS23DdDtRdXrQOFZoEUV96SvM2xrW1eWRqbtv+N+tzU1TUoXorEgjDuAA+aijjaFCEOLldd+l38wdmVg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.identity.ui/8.0.8",
+      "path": "microsoft.aspnetcore.identity.ui/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4490,7 +4483,7 @@
         "buildTransitive/Microsoft.AspNetCore.Identity.UI.targets",
         "lib/net8.0/Microsoft.AspNetCore.Identity.UI.dll",
         "lib/net8.0/Microsoft.AspNetCore.Identity.UI.xml",
-        "microsoft.aspnetcore.identity.ui.8.0.8.nupkg.sha512",
+        "microsoft.aspnetcore.identity.ui.8.0.0.nupkg.sha512",
         "microsoft.aspnetcore.identity.ui.nuspec",
         "staticwebassets/V4/css/site.css",
         "staticwebassets/V4/favicon.ico",
@@ -6395,10 +6388,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.FileProviders.Embedded/8.0.8": {
-      "sha512": "fefQMlaOIQnc7cn7R/GWCwnA6X0tv5pB9ZKIR6I1JZPmYcoCNY7HtLt0bJPMj+F0StrMkwTk2cPtMGtr9zhkoA==",
+    "Microsoft.Extensions.FileProviders.Embedded/8.0.0": {
+      "sha512": "TuRh62KcoOvaSDCbtHT8K0WYptZysYQHPRRNfOgqF7ZUtUL4O0WMV8RdxbtDFJDsg3jv9bgHwXbrgwTeI9+5uQ==",
       "type": "package",
-      "path": "microsoft.extensions.fileproviders.embedded/8.0.8",
+      "path": "microsoft.extensions.fileproviders.embedded/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6413,7 +6406,7 @@
         "lib/net8.0/Microsoft.Extensions.FileProviders.Embedded.xml",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.xml",
-        "microsoft.extensions.fileproviders.embedded.8.0.8.nupkg.sha512",
+        "microsoft.extensions.fileproviders.embedded.8.0.0.nupkg.sha512",
         "microsoft.extensions.fileproviders.embedded.nuspec",
         "tasks/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.Manifest.Task.dll"
       ]
@@ -7514,10 +7507,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "MimeKit/4.8.0": {
-      "sha512": "U24wp4LKED+sBRzyrWICE+3bSwptsTrPOcCIXbW5zfeThCNzQx5NCo8Wus+Rmi+EUkQrCwlI/3sVfejeq9tuxQ==",
+    "MimeKit/4.9.0": {
+      "sha512": "DZXXMZzmAABDxFhOSMb6SE8KKxcRd/sk1E6aJTUE5ys2FWOQhznYV2Gl3klaaSfqKn27hQ32haqquH1J8Z6kJw==",
       "type": "package",
-      "path": "mimekit/4.8.0",
+      "path": "mimekit/4.9.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7525,21 +7518,14 @@
         "docs/README.md",
         "icons/mimekit-50.png",
         "lib/net462/MimeKit.dll",
-        "lib/net462/MimeKit.dll.config",
         "lib/net462/MimeKit.pdb",
         "lib/net462/MimeKit.xml",
         "lib/net47/MimeKit.dll",
-        "lib/net47/MimeKit.dll.config",
         "lib/net47/MimeKit.pdb",
         "lib/net47/MimeKit.xml",
         "lib/net48/MimeKit.dll",
-        "lib/net48/MimeKit.dll.config",
         "lib/net48/MimeKit.pdb",
         "lib/net48/MimeKit.xml",
-        "lib/net6.0/MimeKit.dll",
-        "lib/net6.0/MimeKit.dll.config",
-        "lib/net6.0/MimeKit.pdb",
-        "lib/net6.0/MimeKit.xml",
         "lib/net8.0/MimeKit.dll",
         "lib/net8.0/MimeKit.dll.config",
         "lib/net8.0/MimeKit.pdb",
@@ -7552,7 +7538,7 @@
         "lib/netstandard2.1/MimeKit.dll.config",
         "lib/netstandard2.1/MimeKit.pdb",
         "lib/netstandard2.1/MimeKit.xml",
-        "mimekit.4.8.0.nupkg.sha512",
+        "mimekit.4.9.0.nupkg.sha512",
         "mimekit.nuspec"
       ]
     },
@@ -8819,10 +8805,10 @@
         "version.txt"
       ]
     },
-    "System.Security.Cryptography.Pkcs/8.0.0": {
-      "sha512": "ULmp3xoOwNYjOYp4JZ2NK/6NdTgiN1GQXzVVN1njQ7LOZ0d0B9vyMnhyqbIi9Qw4JXj1JgCsitkTShboHRx7Eg==",
+    "System.Security.Cryptography.Pkcs/8.0.1": {
+      "sha512": "CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
       "type": "package",
-      "path": "system.security.cryptography.pkcs/8.0.0",
+      "path": "system.security.cryptography.pkcs/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8851,7 +8837,7 @@
         "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
         "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
         "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
-        "system.security.cryptography.pkcs.8.0.0.nupkg.sha512",
+        "system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
         "system.security.cryptography.pkcs.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -9377,9 +9363,9 @@
     "net8.0": [
       "Bogus >= 35.6.1",
       "EPPLUS >= 7.3.0",
-      "MailKit >= 4.8.0",
+      "MailKit >= 4.9.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.8",
-      "Microsoft.AspNetCore.Identity.UI >= 8.0.8",
+      "Microsoft.AspNetCore.Identity.UI >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
       "Microsoft.EntityFrameworkCore.SQLite >= 8.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.8",
@@ -9443,7 +9429,7 @@
           },
           "MailKit": {
             "target": "Package",
-            "version": "[4.8.0, )"
+            "version": "[4.9.0, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
@@ -9451,7 +9437,7 @@
           },
           "Microsoft.AspNetCore.Identity.UI": {
             "target": "Package",
-            "version": "[8.0.8, )"
+            "version": "[8.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

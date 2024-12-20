@@ -1,17 +1,27 @@
-using Microsoft.EntityFrameworkCore; 
-using Microsoft.Extensions.DependencyInjection;
 using FirstWebMVC.Data;
-using FirstWebMVC.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using FirstWebMVC.Models;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.CodeAnalysis.Options;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using FirstWebMVC.Models.Process;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authorization;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOptions();
+var mailSettings = builder.Configuration.GetSection("MailSettings");
+builder.Services.AddTransient<IEmailSender, SendMailService>();
+builder.Services.Configure<MailSettings>(mailSettings);
+
 builder.Services.AddDbContext<ApplicationDbContext>(options => 
 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") 
 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true )
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add services to the container.

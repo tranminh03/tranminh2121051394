@@ -1,0 +1,10 @@
+@model Microsoft.AspNetCore.Identity.IdentityRole
+
+<h2>Edit Role</h2>
+<form asp-action="Edit" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <label for="roleName">Role Name:</label>
+        <input type="text" name="newName" id="" value="@Model.Name" class="form-control">
+    </div>
+    <button class="btn btn-primary">Save</button>
+</form>

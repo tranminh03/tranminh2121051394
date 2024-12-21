@@ -1,0 +1,33 @@
+@using FirstWebMVC.Models.ViewModels
+@using Microsoft.AspNetCore.Identity
+@using FirstWebMVC.Models.Entities
+@model IEnumerable<UserWithRoleVM>
+    
+<table class="table">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Roles</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var userWithRoles in Model)
+        {
+            <tr>
+                <td>@userWithRoles.User.UserName</td>
+                <td>
+                    @foreach(var role in userWithRoles.Roles)
+                    {
+                        <span>@role</span>
+                        <br />
+                    }
+                </td>
+                <td>
+                    <a asp-controller="Account" asp-action="AssignRole" asp-route-userId="@userWithRoles.User.Id">AssignRole</a>|
+                    <a asp-controller="Account" asp-action="AddClaim" asp-route-userId="@userWithRoles.User.Id">AddClaim</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using FirstWebMVC.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using FirstWebMVC.Models.Entities;
+
 
 namespace FirstWebMVC.Data
 {
@@ -12,8 +14,11 @@ namespace FirstWebMVC.Data
     public DbSet<Person> Person { get; set; } = default!;
     public DbSet<Student> Student { get; set; } = default!;
     public DbSet<Employee> Employee { get; set; } = default!;
+    public DbSet<Employee2> Employee2 { get; set; } = default!;
+    public DbSet<MemberUnit> MemberUnit { get; set; } = default!;
 
-        protected override void OnModelCreating(ModelBuilder builder)
+
+            protected override void OnModelCreating(ModelBuilder builder)
 
         {
             base.OnModelCreating(builder);

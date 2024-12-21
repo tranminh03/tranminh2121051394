@@ -10,24 +10,35 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authorization;
 
 
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOptions();
 var mailSettings = builder.Configuration.GetSection("MailSettings");
 builder.Services.AddTransient<IEmailSender, SendMailService>();
 builder.Services.Configure<MailSettings>(mailSettings);
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
-options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")
 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-.AddEntityFrameworkStores<ApplicationDbContext>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-
+builder.Services.AddAuthorization(options =>
+{
+    foreach (var permission in Enum.GetValues(typeof(SystemPermissions)).Cast<SystemPermissions>())
+    {
+        options.AddPolicy(permission.ToString(), policy =>
+        policy.RequireClaim("Permission", permission.ToString()));
+    }
+    // options.AddPolicy("Role",policy =>policy.RequireClaim("Role","AdminOnly"));
+    // options.AddPolicy("Permission",policy =>policy.RequireClaim("Role","StudentOnly"));
+    // options.AddPolicy("PolicyAdmin",policy =>policy.RequireRole("Admin"));
+    // options.AddPolicy("PolicyStudent",policy =>policy.RequireRole("Student"));
+    // options.AddPolicy("PolicyByPhoneNumber",policy =>policy.Requirements.Add(new PolicyByPhoneNumberRequirement()));
+});
+builder.Services.AddSingleton<IAuthorizationHandler, PolicyByPhoneNumberHandler>();
 // Cấu hình các tùy chọn Identity cho ASP.NET Core
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -78,7 +89,6 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = true;
 });
 
-// cookie ----------
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -108,8 +118,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 
-
-//- Cấu hình bảo vệ dữ liệu 
 builder.Services.AddDataProtection()
 
     // Xác định thư mục lưu trữ khóa bảo vệ dữ liệu
@@ -123,9 +131,35 @@ builder.Services.AddDataProtection()
 
 
 
+builder.Services.AddRazorPages();
 
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => 
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
+})
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders();
+
+builder.Services.AddTransient<Employee2Seeder>();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = $"/Identity/Account/Login";
+    options.LogoutPath = $"/Identity/Account/Logout";
+    options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+});
 
 var app = builder.Build();
+
+//Employee2Seeder
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var seeder = services.GetRequiredService<Employee2Seeder>();
+    seeder.SeedEmployee2s(1000);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -147,7 +181,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-    
+
 app.MapRazorPages();
 
 app.Run();
